@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// A
+class Movie {
+    constructor(title, studio, rating) {
+      this.title = title;
+      this.studio = studio;
+      this.rating = rating;
+    }
+  }
+  
+  const movie1 = new Movie("Inception", "Warner Bros.", "9.7");
+  const movie2 = new Movie("The Matrix", "Warner Bros.", "5.6");
+  
+  console.log(movie1);
+  console.log(movie2);
+//B
+class Movie {
+  constructor(title, studio, rating = "PG") {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+}
+
+const movie1 = new Movie("Inception", "Warner Bros.");
+const movie2 = new Movie("The Matrix", "Warner Bros.", "R");
+
+console.log(movie1);
+console.log(movie2);
+
+//D
+class Movie {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+}
+
+const casinoRoyale = new Movie("Casino Royale", "Eon Productions", "PG-13");
+
+console.log(casinoRoyale);
+
+//C
+class Movie {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+}
+
+function getPG(movieArray) {
+  const pgMovies = [];
+  for (let i = 0; i < movieArray.length; i++) {
+    if (movieArray[i].rating === "PG") {
+      pgMovies.push(movieArray[i]);
+    }
+  }
+  return pgMovies;
+}
+
+const movies = [
+  new Movie("Movie 1", "Studio 1", "PG"),
+  new Movie("Movie 2", "Studio 2", "R"),
+  new Movie("Movie 3", "Studio 3", "PG"),
+];
+
+const pgMovies = getPG(movies);
+console.log(pgMovies); 
+
+//2.
+class Circle {
+  private radius: number = 1.0;
+  private color: string = "red";
+
+  constructor() {}
+
+  getRadius(): number {
+    return this.radius;
+  }
+
+  setRadius(radius: number): void {
+    this.radius = radius;
+  }
+
+  getColor(): string {
+    return this.color;
+  }
+
+  setColor(color: string): void {
+    this.color = color;
+  }
+
+  getArea(): number {
+    return Math.PI * this.radius * this.radius;
+  }
+
+  getCircumference(): number {
+    return 2 * Math.PI * this.radius;
+  }
+}
+
+const myCircle = new Circle();
+console.log("Radius:", myCircle.getRadius());
+console.log("Color:", myCircle.getColor());
+
+myCircle.setRadius(2.5);
+myCircle.setColor("blue");
+
+console.log("Radius:", myCircle.getRadius());
+console.log("Color:", myCircle.getColor());
+console.log("Area:", myCircle.getArea());
+console.log("Circumference:", myCircle.getCircumference());
+
+//3.
+class Person {
+  constructor(firstName, lastName, age, gender) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.gender = gender;
+  }
+
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  getAge() {
+    return this.age;
+  }
+
+  getGender() {
+    return this.gender;
+  }
+
+  introduce() {
+    return `Hello, I'm ${this.getFullName()}, a ${this.getAge()} year old ${this.getGender()}.`;
+  }
+}
+
+const person1 = new Person('John', 'Doe', 30, 'Male');
+const person2 = new Person('Jane', 'Smith', 25, 'Female');
+
+console.log(person1.introduce()); 
+console.log(person2.introduce()); 
+
+//4.write a class to calculate uber price.
+class Uber {
+    constructor(BaseFare=15,CostPerMile=2,CostPerMinute=1,BookingFee=10,time=1,mile=2){
+    this.BaseFare=BaseFare;
+    this.CostPerMile=CostPerMile
+    this.CostPerMinute=CostPerMinute;
+    this.BookingFee=BookingFee;
+    this.time=time;
+    this.mile=time;
+    }
+    totalPrice(time=this.time , mile=this.mile){
+        console.log(this.BaseFare)+(this.BookingFee)+
+        (this.CostPerMinute)+(this.time)+(this.mile)
+    }
+}
+let bike = new Uber();
+bike.totalPrice(10,100); 
+bike.totalPrice(15,20)
+    </script>
+</body>
+</html>
